@@ -108,4 +108,4 @@ async def iss(ctx):
 
     await ctx.send(embed=embed)
 
-client.run('ODYxMjk4MDQwNTE3Mjk2MTM4.YOHwTw.oFFFpTaCujN4uNJATvhZnlbj8ig')
+client.run('f')
