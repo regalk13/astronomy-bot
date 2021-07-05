@@ -79,7 +79,7 @@ class Astronomy(Cog):
 
             embed = discord.Embed(
                 title = f"Datos de {name_es.text}:",
-                colour = discord.Colour.red()
+                colour = discord.Colour.orange()
             )
 
             embed.add_field(name="Aquí encontraras datos exactos acerca de tu petición:", value=f'> **Nombre**: {name}/{name_es.text}.\n> **Planeta**: {planet}.\n> **Masa**: {mass_value}.\n> **Volumen**: {vol_value}.\n> **Densidad**: {density}.\n> **Gravedad**: {gravity}.',inline=False)

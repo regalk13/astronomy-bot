@@ -32,5 +32,5 @@ def setup(client):
     print("setup complete")
 
 if __name__ == '__main__':
-    client.run('ODYxMjk4MDQwNTE3Mjk2MTM4.YOHwTw.w49KCFb5pOICV9lEkIc6_4kNOHU')
+    client.run('f')
 
