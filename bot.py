@@ -6,12 +6,13 @@ from discord.ext.commands.errors import ExpectedClosingQuoteError
 import requests
 from googletrans import Translator
 import random
+from pathlib import Path
 from glob import glob
 
 from requests.api import request
 
 client = commands.Bot(command_prefix = '>')
-cogs = [path.split("\\")[-1][:-3] for path in glob("./cogs/*.py")]
+cogs = [p.stem for p in Path(".").glob("./cogs/*.py")]
 
 
 @client.event
@@ -22,7 +23,12 @@ async def on_ready():
 
 @client.command()
 async def ping(ctx):
-    await ctx.send("Pong!")
+    embed = discord.Embed(
+        title="Pong!",
+        colour=discord.Colour.green()
+    )
+
+    await ctx.send(embed=embed)
 
 def setup(client):
     for cog in cogs:
@@ -32,5 +38,5 @@ def setup(client):
     print("setup complete")
 
 if __name__ == '__main__':
-    client.run('f')
+    client.run('')
 
