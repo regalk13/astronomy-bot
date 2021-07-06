@@ -1,2 +1,2 @@
 # astronomy-bot
-Discord Astronomy Bot
+Discord Astronomy Bot.
