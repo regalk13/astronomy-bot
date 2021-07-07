@@ -1,5 +1,5 @@
 psutil==5.8.0
-discord_ext_menus==1.0.0a27+g6f2b873
+git+https://github.com/Rapptz/discord-ext-menus.git@master
 googletrans==4.0.0rc1
 pycoingecko==1.4.0
 requests==2.25.1
