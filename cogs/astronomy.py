@@ -18,7 +18,7 @@ class Astronomy(Cog):
     @command(name="daily", aliases=["diario"])
     async def daily(self, ctx):
         translator = Translator()
-        response = requests.get("https://api.nasa.gov/planetary/apod?api_key=ol67wRzFoXgOlng82F2pHe8t6iezEbb9vxCbWJil")
+        response = requests.get(f"https://api.nasa.gov/planetary/apod?api_key={your_api_key}")
         getters = response.json()
         title = getters['title']
         titles = translator.translate(title, dest="es")
@@ -39,7 +39,7 @@ class Astronomy(Cog):
 
     @command(name="rover", aliases=["mars"])
     async def rover(self, ctx):
-        response = requests.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=ol67wRzFoXgOlng82F2pHe8t6iezEbb9vxCbWJil")
+        response = requests.get(f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key={your_api_key}")
         getters = response.json()
         random_number = random.randint(1, 100)
         image = getters['photos']

@@ -8,6 +8,7 @@ from googletrans import Translator
 import random
 from pathlib import Path
 from glob import glob
+import time
 
 from requests.api import request
 
@@ -23,12 +24,11 @@ async def on_ready():
 
 @client.command()
 async def ping(ctx):
-    embed = discord.Embed(
-        title="Pong!",
-        colour=discord.Colour.green()
-    )
+    start = time.time()
+    message = await ctx.send(f"Pong! latencia: {client.latency*1000:,.0f} ms.")
+    end = time.time()
 
-    await ctx.send(embed=embed)
+    await message.edit(content=f"Pong! latencia: {client.latency*1000:,.0f} ms. Tiempo de respuesta: {(end-start)*1000:,.0f} ms.")
 
 def setup(client):
     for cog in cogs:
@@ -38,5 +38,5 @@ def setup(client):
     print("setup complete")
 
 if __name__ == '__main__':
-    client.run('')
+    client.run(Your_Token)
 
